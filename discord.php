@@ -1,5 +1,5 @@
 <?php
-$url = "https://discordapp.com/api/webhooks/1149889838804390029/V127X6mXCUT0Gd2RXYB3WxJvuH05nxgqZ-1A3r7HJjSWZaHCqo-AiQ7wRM274T0ciJp2";
+$url = ""; //Your discord webhook info
 $headers = [ 'Content-Type: application/json; charset=utf-8' ];
 $_POST["modeDetail"] = strtoupper($_POST["modeDetail"]);
 
