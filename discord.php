@@ -1,28 +1,28 @@
 <?php
-$url = "https://discordapp.com/api/webhooks/ {your api key goes here }";
+$url = "https://discordapp.com/api/webhooks/1149889838804390029/V127X6mXCUT0Gd2RXYB3WxJvuH05nxgqZ-1A3r7HJjSWZaHCqo-AiQ7wRM274T0ciJp2";
 $headers = [ 'Content-Type: application/json; charset=utf-8' ];
 $_POST["modeDetail"] = strtoupper($_POST["modeDetail"]);
 
 
 
 $content = "$_POST[time]Z ";
-$content .= "$_POST[fullCallsign] ";
+$content .= "[$_POST[fullCallsign]](<https://www.qrz.com/db/$_POST[fullCallsign]>) ";
 $content .= "$_POST[frequency] ";
 $content .= "$_POST[modeDetail] ";
 
 if (isset($_POST['wwffRef'])) {
-        $content .= "$_POST[wwffRef] ";
-		$content .= "$_POST[wwffName] ";
+        $content .= "[$_POST[wwffRef]](<https://pota.app/#/park/$_POST[wwffRef]>) ";
+	$content .= "$_POST[wwffName] ";
 }
 
 if (isset($_POST['summitRef'])) {
-        $content .= "$_POST[summitRef] ";
-		$content .= "$_POST[summitName] ";
+        $content .= "[$_POST[summitRef]](<https://www.sotadata.org.uk/en/summit/$_POST[summitRef]>) ";
+	$content .= "$_POST[summitName] ";
 }
 
 if (isset($_POST['iotaGroupRef'])) {
-        $content .= "$_POST[iotaGroupRef] ";
-		$content .= "$_POST[iotaGroupName] ";
+        $content .= "[$_POST[iotaGroupRef]](<https://www.iota-world.org/islands-on-the-air/iota-groups-islands/groups.html?filter[search]=$_POST[iotaGroupRef]>) ";
+	$content .= "$_POST[iotaGroupName] ";
 }
 
 
